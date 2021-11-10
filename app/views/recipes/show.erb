@@ -1,8 +1,24 @@
-<h2><%= @recipe.title %></h2>
-<img src=<%= @recipe.photo.url%> alt="">
-<% if @recipe.tags %>
-  <% @recipe.tags.each do |tag| %>
-    <p><%= tag.name %></p>
-  <% end %>
-<% end  %>
-<%= markdown(@recipe.description) %>
+<div class="container">
+  <div class="content">
+    <div class="recipe-card">
+      <h2><%= "#{@recipe.title}"%></h2>
+      <% if @recipe.chef != nil %>
+        <h4><%= "by #{@recipe.chef.name}" %></h4>
+      <% end %>
+      <div class="recipe-image">
+        <img src=<%= @recipe.photo.url%> alt="">
+      </div>
+      <% if @recipe.tags %>
+        <p>tags:
+        <% @recipe.tags.each do |tag| %>
+          <span><%= tag.name %>     </span>
+        <% end %>
+        </p>
+      <% end  %>
+      <%= markdown(@recipe.description) %>
+    </div>
+    <div class="return-container">
+      <%= link_to 'back', root_path, class: 'return-link' %>
+    </div>
+  </div>
+</div>
