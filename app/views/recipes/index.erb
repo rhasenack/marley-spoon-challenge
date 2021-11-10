@@ -1,5 +1,16 @@
-<% @recipes.each do |recipe| %>
-  <h2><%= recipe.title %></h2>
-  <img src=<%= recipe.photo.url%> alt="">
-  <%= link_to 'check details', recipe_path(recipe.id) %>
-<% end %>
+
+<div class="container">
+<div class="content">
+    <h1>Recipes</h1>
+    <% @recipes.each do |recipe| %>
+      <%= link_to  recipe_path(recipe.id) do %>
+        <div class="recipe-card">
+          <h2><%= recipe.title %></h2>
+          <div class="recipe-image">
+            <img src=<%= recipe.photo.url%> alt="">
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
