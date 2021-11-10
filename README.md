@@ -7,9 +7,16 @@ This app was developed as part of the selection process for the position o Junio
 To run the app, follow the following steps:
 
 1. Clone or fork this repository
-2. On your terminal, run `bundle `
-3. Run `rails server`
-4. Visit `localhost:3000/` and the app should be running.
+2. On your terminal, run `bundle install `
+3. Run `yarn install`
+4. Set your environment variables. In linux:
+   ```
+   touch .env
+
+   echo -e "CONTENTFUL_SPACE_ID=kk2bw5ojx476 \nCONTENTFUL_ENVIRONMENT_ID=master \nCONTENTFUL_ACCESS_TOKEN=7ac531648a1b5e1dab6c18b0979f822a5aad0fe5f1109829b8a197eb2be4b84c" > .env
+   ```
+5. Run `rails server`
+6. Visit `localhost:3000/` and the app should be running.
 
 ## Additional info
 
